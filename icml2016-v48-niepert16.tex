@@ -1,0 +1,65 @@
+% !TeX encoding = UTF-8
+% !TeX program = upLaTeX + dvipdfmx
+
+\documentclass[dvipdfmx]{beamer}
+\mode<presentation>
+\usepackage{bxdpx-beamer}  % ナビゲーションシンボルを機能させる
+\usepackage{pxjahyper}     % しおりの文字化け対策
+\renewcommand{\kanjifamilydefault}{\gtdefault} % 和文既定をゴシックに変更
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\usetheme{Frankfurt}
+
+\setbeamertemplate{navigation symbols}{}   % ナビゲーションシンボルを消す
+\setbeamertemplate{footline}[frame number] % フッターをスライド番号だけにする
+\setbeamertemplate{blocks}[rounded][shadow=false]
+
+\title{Example Presentation Created with the Beamer Package}
+\author{pione30}
+\date{\today}
+
+\begin{document}
+
+  \frame[plain]{\titlepage}
+
+\section*{Outline}
+
+  \begin{frame}
+    \tableofcontents
+  \end{frame}
+
+\section{Theorem and proof}
+
+  \begin{frame}
+    \frametitle{There Is No Largest Prime Number}
+    \framesubtitle{The proof uses \textit{reductio ad absurdum}.}
+    
+    \begin{theorem}
+      There is no largest prime number.
+    \end{theorem}
+
+    \begin{proof}
+      \begin{enumerate}
+        \item<1-| alert@1> Suppose $p$ were the largest prime number.
+        \item<2-> Let $q$ be the product of the first $p$ numbers.
+        \item<3-> Then $q+1$ is not divisible by any of them.
+        \item<4-> But $q + 1$ is greater than $1$, thus divisible by some prime
+        number not in the first $p$ numbers.\qedhere
+      \end{enumerate}
+    \end{proof}
+  \end{frame}
+
+\section{日本語のテスト}
+
+  \begin{frame}{日本語のテスト}
+    \begin{block}{日本語ブロック}
+      テストだよ
+
+      いろはにほへとちりぬるを\\
+      \visible<2->{\alert{わかよたれそつねならむ}}
+    \end{block}
+  \end{frame}
+
+\end{document}

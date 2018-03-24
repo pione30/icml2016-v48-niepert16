@@ -15,8 +15,16 @@
 \setbeamertemplate{navigation symbols}{}   % ナビゲーションシンボルを消す
 \setbeamertemplate{footline}[frame number] % フッターをスライド番号だけにする
 \setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{caption}[numbered]
 
-\title{Example Presentation Created with the Beamer Package}
+% \section ごとに目次を挿入
+\AtBeginSection[]{%
+  \begin{frame}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\title{Learning Convolutional Neural Networks for Graphs}
 \author{pione30}
 \date{\today}
 
@@ -30,36 +38,70 @@
     \tableofcontents
   \end{frame}
 
-\section{Theorem and proof}
+\section{Absract}
 
-  \begin{frame}
-    \frametitle{There Is No Largest Prime Number}
-    \framesubtitle{The proof uses \textit{reductio ad absurdum}.}
-    
-    \begin{theorem}
-      There is no largest prime number.
-    \end{theorem}
+  \begin{frame}{Absract}
 
-    \begin{proof}
-      \begin{enumerate}
-        \item<1-| alert@1> Suppose $p$ were the largest prime number.
-        \item<2-> Let $q$ be the product of the first $p$ numbers.
-        \item<3-> Then $q+1$ is not divisible by any of them.
-        \item<4-> But $q + 1$ is greater than $1$, thus divisible by some prime
-        number not in the first $p$ numbers.\qedhere
-      \end{enumerate}
-    \end{proof}
+    \alert{We propose a framework for learning convolutional neural networks for arbitrary graphs.}
   \end{frame}
 
-\section{日本語のテスト}
+  \begin{frame}{Absract}
 
-  \begin{frame}{日本語のテスト}
-    \begin{block}{日本語ブロック}
-      テストだよ
-
-      いろはにほへとちりぬるを\\
-      \visible<2->{\alert{わかよたれそつねならむ}}
+    \begin{block}{We claim that \dots }
+      \begin{itemize}
+        \item{the learned feature representations are competitive with state of the art graph kernels.} 
+        \item{computation is highly efficient.}
+      \end{itemize}
     \end{block}
+  \end{frame}
+
+\section{Introduction}
+
+  \begin{frame}{What is `learning'?}
+    Consider the function
+    \begin{align}
+      f: G \to x
+    \end{align}
+    where $G$ is a graph and $x$ is some corresponding value to $G$, such as the level of activity against cancer cells.
+
+    \visible<2->{\alert{`Learning' is to learn $f$.}}
+  \end{frame}
+
+  \begin{frame}{The neighborhood graph of CNN}
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.7\paperwidth]{img/Fig1.png}
+      \caption{A CNN with a receptive field of size 3x3.}
+    \end{figure}
+  \end{frame}
+
+\section{Background}
+
+\section{Learning Procedure}
+
+\section{Experiments}
+
+  \section{Conclusion and Future Work}
+
+  \begin{frame}{Conclusion}
+    \alert{\Large We proposed a framework for learning graph representations that are especially beneficial in conjunction with CNNs.}
+    \vspace{5mm}
+
+    \begin{block}{Procedure}
+      \begin{enumerate}
+        \item select a sequence of nodes
+        \item generate local normalized neighborhood representations for each of the nodes in the sequence
+      \end{enumerate}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}{Future Work}
+    \begin{itemize}
+      \item RNNs
+      \item different receptive field sizes
+      \item pretraining with RBMs and autoencoders
+      \item statistical relational models
+    \end{itemize}
   \end{frame}
 
 \end{document}

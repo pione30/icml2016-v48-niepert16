@@ -81,7 +81,73 @@
 
 \section{Experiments}
 
-  \section{Conclusion and Future Work}
+  \begin{frame}{Runtime Analysis}
+    PATCHY-SAN with 1-dimensional Weisfeiler-Lehman (1-WL) algorithm for the normalization.
+    \vspace{5mm}
+
+    \begin{block}{input graphs (graph-tool\footnotemark collection)}
+      \begin{itemize}
+        \item torus
+        \item random
+        \item power
+        \item polbooks
+        \item preferential
+        \item astro-ph
+        \item email-enron
+      \end{itemize}
+    \end{block}
+    \footnotetext{https://graph-tool.skewed.de/}
+  \end{frame}
+
+  \begin{frame}{Runtime Analysis}
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.7\paperwidth]{img/Fig4.png}
+      \caption{Receptive fields per second rates on different graphs.}
+    \end{figure} 
+  \end{frame}
+
+  \begin{frame}{Graph Classification}
+    \begin{block}{Comparision: PATCHY-SAN with \dots}
+      \begin{itemize}
+        \item shortest-path kernel (SP)
+        \item random walk kernel (RW)
+        \item graphlet count kernel (GK)
+        \item Weisfeiler-Lehman subtree kernel (WL)
+      \end{itemize}
+    \end{block}
+
+    \begin{exampleblock}{Parameters}
+      \begin{itemize}
+        \item The decay factor for RW is chosen from $\{10^{-6}, 10^{-5}, \dots, 10^{-1}\}$
+        \item The size of the graphlets for GK is 7
+        \item THe height parameter of WL is 2
+      \end{itemize}
+    \end{exampleblock}
+  \end{frame}
+
+  \begin{frame}{Graph Classification}
+    \begin{block}{Data sets}
+      \begin{itemize}
+        \item MUTAG
+        \item PCT
+        \item NCI1
+        \item NCI109
+        \item PROTEIN
+        \item D\&D 
+      \end{itemize}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}{Graph Classification}
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.9\paperwidth]{img/Table1.png}
+      \caption{Properties of the data sets and accuracy and timing results (in seconds)}
+    \end{figure} 
+  \end{frame}
+
+\section{Conclusion and Future Work}
 
   \begin{frame}{Conclusion}
     \alert{\Large We proposed a framework for learning graph representations that are especially beneficial in conjunction with CNNs.}

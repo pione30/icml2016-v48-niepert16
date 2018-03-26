@@ -44,7 +44,7 @@
 
   \begin{frame}{Absract}
 
-    \alert{We propose a framework for learning convolutional neural networks for arbitrary graphs.}
+    \alert{We propose a framework for learning Convolutional Neural Networks (CNN) for arbitrary graphs.}
   \end{frame}
 
   \begin{frame}{Absract}
@@ -59,6 +59,14 @@
 
 \section{Introduction}
 
+  \begin{frame}{The architecture of CNN}
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.8\paperwidth]{img/CS231n-CNN-architecture.png}
+      \caption{The architecture of CNN\footnote{http://cs231n.github.io/convolutional-networks/}}
+    \end{figure}
+  \end{frame}
+
   \begin{frame}{The neighborhood graph of CNN}
     \begin{figure}[h]
       \centering
@@ -67,7 +75,27 @@
     \end{figure}
   \end{frame}
 
-  \begin{frame}{Architecture}
+  \begin{frame}{The neighborhood graph of CNN}
+    \begin{block}{CNN for images \dots}
+      Due to \structure{the implicit spatial order} of the pixels, the sequence of nodes \
+      for which neighborhood graphs are created is \alert{uniquely determined.}
+    \end{block}
+  \end{frame}
+
+  \begin{frame}{Collection of \alert{arbitrary} graphs}
+    \begin{block}{One has to \dots}
+      \begin{enumerate}
+        \item determin the node sequences for which neighborhood graphs are created
+        \item compute a \alert{normalization} of neighborhood graphs, that is, \
+          a unique mapping from a graph representation into a vector space representation.
+      \end{enumerate}
+    \end{block}
+
+    \vspace{1cm}
+    \visible<2->{$\to$ We proposed new approach termed \alert{PATCHY-SAN.}}
+  \end{frame}
+
+  \begin{frame}{The architecture of PATCHY-SAN}
     \begin{figure}[h]
       \centering
       \includegraphics[width=0.8\paperwidth]{img/Fig2.pdf}
@@ -75,9 +103,15 @@
     \end{figure}
   \end{frame}
 
-\section{Background}
-
 \section{Learning Procedure}
+
+  \begin{frame}{Preparation}
+    \begin{itemize}
+      \item One has to determine a \alert{labeling procedure $\ell$} which is used to sort the graph and \
+        select a node sequence.
+      \item $\ell$ is also used when normalizing a neighborhood subgraph.
+    \end{itemize}
+  \end{frame}
 
   \begin{frame}{Architecture}
     \begin{figure}[h]

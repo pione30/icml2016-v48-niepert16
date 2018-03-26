@@ -11,4 +11,7 @@
 *.synctex.gz
 *.toc
 
+# swp file
+*.swp
+
 !img/*

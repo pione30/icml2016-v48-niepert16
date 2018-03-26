@@ -32,6 +32,8 @@
 
   \frame[plain]{\titlepage}
 
+  \frame[plain]{\Large All of the figures in this presentation are, unless explicitly stated, those of the original paper\footnote{http://proceedings.mlr.press/v48/niepert16.pdf}.}
+
 \section*{Outline}
 
   \begin{frame}
@@ -70,14 +72,30 @@
   \begin{frame}{The neighborhood graph of CNN}
     \begin{figure}[h]
       \centering
-      \includegraphics[width=0.7\paperwidth]{img/Fig1.png}
+      \includegraphics[width=0.8\paperwidth]{img/Fig1.pdf}
       \caption{A CNN with a receptive field of size 3x3.}
+    \end{figure}
+  \end{frame}
+
+  \begin{frame}{Architecture}
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.8\paperwidth]{img/Fig2.pdf}
+      \caption{An illustration of the PATCHY-SAN architecture.}
     \end{figure}
   \end{frame}
 
 \section{Background}
 
 \section{Learning Procedure}
+
+  \begin{frame}{Architecture}
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.9\paperwidth]{img/Fig3.pdf}
+      \caption{The normalization procedure}
+    \end{figure}
+  \end{frame}
 
 \section{Experiments}
 
@@ -102,7 +120,7 @@
   \begin{frame}{Runtime Analysis}
     \begin{figure}[h]
       \centering
-      \includegraphics[width=0.7\paperwidth]{img/Fig4.png}
+      \includegraphics[width=0.8\paperwidth]{img/Fig4.pdf}
       \caption{Receptive fields per second rates on different graphs.}
     \end{figure} 
   \end{frame}
@@ -142,7 +160,7 @@
   \begin{frame}{Graph Classification}
     \begin{figure}[h]
       \centering
-      \includegraphics[width=0.9\paperwidth]{img/Table1.png}
+      \includegraphics[width=0.8\paperwidth]{img/Table1.pdf}
       \caption{Properties of the data sets and accuracy and timing results (in seconds)}
     \end{figure} 
   \end{frame}

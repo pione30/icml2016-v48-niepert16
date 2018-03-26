@@ -1,4 +1,17 @@
-**/*
-!.gitignore
-!README.md
-!icml2016-v48-niepert16.tex
+# LaTeX output files
+*.aux
+*.dvi
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.pdf
+*.snm
+*.synctex.gz
+*.toc
+
+# swp file
+*.swp
+
+!img/*

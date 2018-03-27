@@ -67,17 +67,23 @@
     \end{figure}
   \end{frame}
 
-  \begin{frame}{The neighborhood graph of CNN}
+  \begin{frame}{The receptive field and the neighborhood graph of CNN}
+    The locally connected \structure{receptive field} constructed by the \alert{neighborhood graph} is essential for CNN.
+  \end{frame}
+
+  \begin{frame}{The receptive field and the neighborhood graph of CNN}
     \begin{figure}[h]
       \centering
       \includegraphics[width=0.8\paperwidth]{img/Fig1.pdf}
-      \caption{A CNN with a receptive field of size 3x3.}
+      \caption{A CNN with a receptive field of size 3x3.
+        The field is moved over an image from left to right and top to bottom (a).
+        The values read by the receptive fields can be transformed into a vector representation (b).}
     \end{figure}
   \end{frame}
 
-  \begin{frame}{The neighborhood graph of CNN}
+  \begin{frame}{The receptive field and the neighborhood graph of CNN}
     \begin{block}{CNN for images \dots}
-      Due to \structure{the implicit spatial order} of the pixels, the sequence of nodes \
+      Due to \structure{the implicit spatial order} of the pixels, the sequence of nodes
       for which neighborhood graphs are created is \alert{uniquely determined.}
     \end{block}
   \end{frame}
@@ -86,7 +92,7 @@
     \begin{block}{One has to \dots}
       \begin{enumerate}
         \item determin the node sequences for which neighborhood graphs are created
-        \item compute a \alert{normalization} of neighborhood graphs, that is, \
+        \item compute a \alert{normalization} of neighborhood graphs, that is,
           a unique mapping from a graph representation into a vector space representation.
       \end{enumerate}
     \end{block}
@@ -107,7 +113,7 @@
 
   \begin{frame}{Preparation}
     \begin{itemize}
-      \item One has to determine a \alert{labeling procedure $\ell$} which is used to sort the graph and \
+      \item One has to determine a \alert{labeling procedure $\ell$} which is used to sort the graph and
         select a node sequence.
       \item $\ell$ is also used when normalizing a neighborhood subgraph.
     \end{itemize}
